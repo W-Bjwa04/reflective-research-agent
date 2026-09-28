@@ -1,0 +1,9 @@
+openai>=1.30.0
+arxiv>=2.1.0
+tavily-python>=0.3.0
+duckduckgo-search>=6.0.0
+python-dotenv>=1.0.0
+
+[dev]
+pytest>=8.0.0
+pytest-cov>=5.0.0

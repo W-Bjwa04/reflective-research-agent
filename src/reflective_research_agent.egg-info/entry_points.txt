@@ -1,0 +1,2 @@
+[console_scripts]
+research-agent = reflective_agent.cli:main

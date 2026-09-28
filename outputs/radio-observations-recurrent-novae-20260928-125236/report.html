@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Observations of Recurrent Novae: A Research Report</title>
+<style>
+  :root {
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --bg: #ffffff;
+    --text: #1a1a2e;
+    --muted: #55556b;
+    --border: #e2e2ec;
+    --card: #f8f8fc;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #8b87ff;
+      --accent-soft: #1c1b33;
+      --bg: #0f0f1a;
+      --text: #e8e8f0;
+      --muted: #a3a3b8;
+      --border: #2a2a3d;
+      --card: #16162a;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .banner {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
+    color: #ffffff;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .banner h1 {
+    margin: 0 auto;
+    max-width: 860px;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  .banner .subtitle {
+    margin: 0.75rem auto 0;
+    max-width: 860px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border);
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    color: var(--accent);
+    font-size: 1.15rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0 0 1.1rem;
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 650;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+    word-break: break-word;
+  }
+
+  a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  sup a {
+    font-weight: 600;
+    font-size: 0.8em;
+    padding: 0 0.05em;
+  }
+
+  .sources {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    counter-reset: src;
+  }
+
+  .sources li {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    transition: border-color 0.15s ease;
+  }
+
+  .sources li:hover {
+    border-color: var(--accent);
+  }
+
+  .sources .num {
+    display: inline-block;
+    min-width: 2.2em;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .sources .src-title {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .sources .src-link {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+
+  .sources .src-link a {
+    color: var(--accent);
+  }
+
+  footer {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 16px;
+    }
+    main {
+      padding: 1.25rem;
+    }
+    .banner {
+      padding: 2rem 1.25rem 1.75rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+    .sources li {
+      padding: 0.8rem 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="banner">
+  <h1>Radio Observations of Recurrent Novae: A Research Report</h1>
+  <p class="subtitle">Shock Physics, Particle Acceleration &amp; Multi-Messenger Astronomy</p>
+</header>
+
+<main>
+
+  <h2>Executive Summary</h2>
+  <p>Recurrent novae (RNe) are thermonuclear explosions on the surfaces of white dwarfs in close binary systems that recur on human-observable timescales (years to decades). Radio observations have become an indispensable probe of these systems, revealing the physical nature of their ejecta, the geometry of their outflows, and—critically—the shock physics that also drives gamma-ray emission. This report reviews the current state of radio studies of recurrent novae, focusing on the two most intensively observed systems: <strong>RS Ophiuchi</strong> (recurrence ~15 years) and <strong>T Coronae Borealis</strong> (T CrB, recurrence ~80 years). Key findings include the discovery of non-thermal (synchrotron) radio emission from shock-accelerated particles, evidence for asymmetric/bipolar ejecta, and the growing role of radio as a multi-messenger partner to X-ray, gamma-ray, and optical observations. The anticipated eruption of T CrB, now overdue, makes radio monitoring especially timely.</p>
+
+  <h2>Background</h2>
+  <p>A nova occurs in a binary system where a white dwarf accretes matter from a companion star. When a critical layer of hydrogen accumulates, a runaway thermonuclear reaction produces a sudden, dramatic brightening. In <strong>recurrent novae</strong>, this process repeats on timescales short enough to be observed—distinguishing them from classical novae that erupt once per ~10⁴–10⁵ years <sup><a href="#ref-1">[1]</a></sup><sup><a href="#ref-2">[2]</a></sup>. RNe come in two broad classes: those with red-giant companions and long recurrence times (e.g., RS Oph, T CrB), and shorter-period systems with dwarf or subgiant companions (e.g., U Sco, T Pyx) <sup><a href="#ref-1">[1]</a></sup>. The former are often called symbiotic recurrent novae because the red giant's wind creates a dense circumbinary environment.</p>
+  <p>Radio observations are valuable because nova ejecta are optically thick in the radio at early times and become optically thin as the shell expands, allowing astronomers to track the evolving shell geometry, density, temperature, and mass over months to years <sup><a href="#ref-3">[3]</a></sup>. Radio light curves thus provide a unique, long-baseline window into the post-outburst evolution of the nova remnant <sup><a href="#ref-3">[3]</a></sup>.</p>
+
+  <h2>Key Findings</h2>
+
+  <h3>1. Non-thermal radio emission reveals shocks</h3>
+  <p>A breakthrough came with the recognition that radio emission from novae is not purely thermal. Observations of the classical nova <strong>V1723 Aql</strong> with the upgraded Karl G. Jansky Very Large Array (VLA) showed a multi-peaked radio light curve and unexpectedly rapid rise in flux, best explained by shocks between fast and slow ejecta accelerating particles that produce synchrotron radiation <sup><a href="#ref-3">[3]</a></sup><sup><a href="#ref-4">[4]</a></sup>. This established that shocks—already implicated by GeV gamma-ray detections—are energetically important in novae <sup><a href="#ref-4">[4]</a></sup>.</p>
+  <p>Theoretical work by Metzger, Vlasov, and collaborators developed 1D models of shock interaction between the fast nova outflow and a dense external shell. The forward shock is initially radiative, and the predicted radio emission can be thermal (free-free) or non-thermal (synchrotron), depending on whether line cooling operates efficiently in the post-shock gas <sup><a href="#ref-5">[5]</a></sup><sup><a href="#ref-6">[6]</a></sup>. In the synchrotron case, a power-law distribution of electrons is accelerated at the shock, producing a characteristic power-law radio spectrum with spectral index α ≈ −0.5 to −1.0 (where flux density Sν ∝ ν^α).</p>
+
+  <h3>2. RS Ophiuchi: the premier laboratory</h3>
+  <p>RS Ophiuchi, a symbiotic recurrent nova with a red-giant companion and ~15-year recurrence, has been observed at radio wavelengths during multiple outbursts. During the <strong>1985 eruption</strong>, Very Long Baseline Interferometry (VLBI) revealed a linear, multi-component radio source, hinting at a bipolar rather than spherical remnant <sup><a href="#ref-7">[7]</a></sup>. High-resolution radio imaging of the <strong>2006 outburst</strong> confirmed an asymmetric shock wave, contradicting simpler spherical models <sup><a href="#ref-8">[8]</a></sup>. Optical and near-infrared spectroscopy also traced an infrared shock wave as ejecta plowed into the red giant's wind <sup><a href="#ref-9">[9]</a></sup>.</p>
+  <p>The <strong>2021 outburst</strong> produced the richest dataset yet. Low-frequency observations with the upgraded Giant Metrewave Radio Telescope (uGMRT) spanning 0.15–1.4 GHz, taken 23–287 days post-outburst, yielded an optically thin spectral index of α ≈ −0.4, indicating a <strong>non-thermal origin</strong> <sup><a href="#ref-10">[10]</a></sup>. The radio light curves were best fit by shock-driven synchrotron emission initially absorbed by a clumpy ionized circumstellar medium <sup><a href="#ref-10">[10]</a></sup>. This was complemented by the first very-high-energy (TeV) gamma-ray detection of a nova by H.E.S.S., which showed that particle acceleration efficiency in RS Oph reached the theoretical limit <sup><a href="#ref-11">[11]</a></sup><sup><a href="#ref-12">[12]</a></sup>. Together, the radio and gamma-ray data support a hadronic interpretation in which shock-accelerated protons interact with the dense red-giant wind <sup><a href="#ref-13">[13]</a></sup><sup><a href="#ref-14">[14]</a></sup>.</p>
+
+  <h3>3. T Coronae Borealis: an anticipated event</h3>
+  <p>T CrB (the "Blaze Star") is a recurrent nova with recorded eruptions in 1217, 1787, 1866, and 1946, giving an average recurrence of ~80.9 years <sup><a href="#ref-15">[15]</a></sup><sup><a href="#ref-16">[16]</a></sup>. Its next eruption was widely predicted for 2024–2025 based on periodicity arguments <sup><a href="#ref-17">[17]</a></sup>, though it has not yet occurred as of the latest analyses, with some predictions now extending to 2029 or later <sup><a href="#ref-18">[18]</a></sup><sup><a href="#ref-19">[19]</a></sup>. T CrB has received extensive multi-wavelength monitoring (HST, Swift, NuSTAR, XMM-Newton), and its pre-eruption "high state" and spectral changes are being tracked closely <sup><a href="#ref-16">[16]</a></sup><sup><a href="#ref-20">[20]</a></sup>. Because radio observations have proven so diagnostic for RS Oph, T CrB is a prime target for coordinated radio monitoring when it erupts. Radio observations of T CrB during its 1946 eruption were limited, but modern facilities will enable detailed studies of shock physics and ejecta geometry.</p>
+
+  <h2>Analysis</h2>
+  <p>Three themes emerge from the literature:</p>
+  <p><strong>First, radio observations have fundamentally reshaped our understanding of nova ejecta.</strong> Early models assumed freely expanding, photoionized gas, but radio data repeatedly show brightness temperatures and light-curve shapes inconsistent with purely thermal emission <sup><a href="#ref-4">[4]</a></sup><sup><a href="#ref-5">[5]</a></sup>. The resolution came through shock models, which simultaneously explain the radio flares, keV X-ray emission, and GeV/TeV gamma-rays <sup><a href="#ref-5">[5]</a></sup><sup><a href="#ref-6">[6]</a></sup>. This convergence across wavebands is a striking example of multi-messenger astrophysics. Moreover, the detection of non-thermal emission implies that novae can accelerate particles to high energies, potentially contributing to the Galactic cosmic-ray population.</p>
+  <p><strong>Second, recurrent novae are not simply scaled-down classical novae.</strong> Their dense circumbinary environments—especially the red-giant winds in symbiotic systems like RS Oph and T CrB—produce stronger, more rapidly decelerating shocks than in classical novae <sup><a href="#ref-9">[9]</a></sup><sup><a href="#ref-10">[10]</a></sup>. This makes RNe exceptionally efficient particle accelerators, as demonstrated by RS Oph reaching the theoretical acceleration limit <sup><a href="#ref-11">[11]</a></sup>. The shocks in RNe can also probe the mass-loss history of the companion star.</p>
+  <p><strong>Third, radio interferometry provides unique geometric information.</strong> VLBI imaging of RS Oph revealed bipolar/asymmetric structure that single-dish photometry could not capture <sup><a href="#ref-7">[7]</a></sup><sup><a href="#ref-8">[8]</a></sup>. This geometric insight is essential for correctly interpreting ejecta masses, which radio models have sometimes overestimated by an order of magnitude relative to theory <sup><a href="#ref-3">[3]</a></sup>.</p>
+  <p>A notable limitation is the sparse radio coverage of most RNe. RS Oph is well-studied because of its brightness and accessibility; other RNe (U Sco, T Pyx, V3890 Sgr, V745 Sco) have far less radio data. The field would benefit from rapid-response, wide-band radio monitoring triggered by outburst alerts. Future facilities such as the Square Kilometre Array (SKA) will provide unprecedented sensitivity and resolution, enabling the detection of fainter and more distant RNe, and allowing detailed studies of shock evolution in real time.</p>
+
+  <h2>Conclusion</h2>
+  <p>Radio observations have transformed recurrent novae from curiosities into laboratories for shock physics, particle acceleration, and binary evolution. The synergy between radio, X-ray, and gamma-ray data—epitomized by RS Ophiuchi's 2021 outburst—has established that shocks in nova outflows accelerate particles to very high energies, possibly contributing to Galactic cosmic rays. The imminent (if delayed) eruption of T CrB presents a major opportunity: a coordinated radio campaign, building on the RS Oph template, could deliver unprecedented insight into the earliest phases of a recurrent nova explosion. Continued investment in wide-band radio facilities (VLA, uGMRT, MeerKAT, and eventually the SKA) will be central to this effort.</p>
+
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li id="ref-1">
+      <span class="num">[1]</span><span class="src-title">NASA/ADS – "Recurrent Novae" (NTRS)</span>
+      <span class="src-link"><a href="https://ntrs.nasa.gov/api/citations/19950020655/downloads/19950020655.pdf">https://ntrs.nasa.gov/api/citations/19950020655/downloads/19950020655.pdf</a></span>
+    </li>
+    <li id="ref-2">
+      <span class="num">[2]</span><span class="src-title">Mason &amp; Walters, "Lesson learned from (some) recurrent novae," arXiv:1303.2776</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1303.2776v1">http://arxiv.org/abs/1303.2776v1</a></span>
+    </li>
+    <li id="ref-3">
+      <span class="num">[3]</span><span class="src-title">Weston et al., "Shocks and Ejecta Mass: Radio Observations of Nova V1723 Aql," arXiv:1306.2265</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1306.2265v2">http://arxiv.org/abs/1306.2265v2</a></span>
+    </li>
+    <li id="ref-4">
+      <span class="num">[4]</span><span class="src-title">Weston et al., "Non-Thermal Radio Emission from Colliding Flows in Classical Nova V1723 Aql," arXiv:1505.05879</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1505.05879v2">http://arxiv.org/abs/1505.05879v2</a></span>
+    </li>
+    <li id="ref-5">
+      <span class="num">[5]</span><span class="src-title">Metzger et al., "Shocks in nova outflows. I. Thermal emission," arXiv:1403.1579</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1403.1579v1">http://arxiv.org/abs/1403.1579v1</a></span>
+    </li>
+    <li id="ref-6">
+      <span class="num">[6]</span><span class="src-title">Vlasov, Vurm &amp; Metzger, "Shocks in nova outflows. II. Synchrotron radio emission," arXiv:1603.05194</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1603.05194v2">http://arxiv.org/abs/1603.05194v2</a></span>
+    </li>
+    <li id="ref-7">
+      <span class="num">[7]</span><span class="src-title">MNRAS (1989) VLBI observations of RS Oph</span>
+      <span class="src-link"><a href="https://adsabs.harvard.edu/pdf/1989MNRAS.237...81T">https://adsabs.harvard.edu/pdf/1989MNRAS.237...81T</a></span>
+    </li>
+    <li id="ref-8">
+      <span class="num">[8]</span><span class="src-title">O'Brien et al., "An asymmetric shock wave in the 2006 outburst of RS Ophiuchi," arXiv:astro-ph/0606224</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/astro-ph/0606224v1">http://arxiv.org/abs/astro-ph/0606224v1</a></span>
+    </li>
+    <li id="ref-9">
+      <span class="num">[9]</span><span class="src-title">Das, Banerjee &amp; Ashok, "A near-infrared shock wave in the 2006 outburst of RS Ophiuchi," arXiv:astro-ph/0611254</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/astro-ph/0611254v1">http://arxiv.org/abs/astro-ph/0611254v1</a></span>
+    </li>
+    <li id="ref-10">
+      <span class="num">[10]</span><span class="src-title">Nayana et al., "Shock-driven synchrotron radio emission from the 2021 outburst of RS Ophiuchi," arXiv:2401.05643</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/2401.05643v1">http://arxiv.org/abs/2401.05643v1</a></span>
+    </li>
+    <li id="ref-11">
+      <span class="num">[11]</span><span class="src-title">H.E.S.S. Collaboration, "Time-resolved hadronic particle acceleration in the recurrent nova RS Ophiuchi," Science (2022)</span>
+      <span class="src-link"><a href="https://www.science.org/doi/10.1126/science.abn0567">https://www.science.org/doi/10.1126/science.abn0567</a></span>
+    </li>
+    <li id="ref-12">
+      <span class="num">[12]</span><span class="src-title">Multi-messenger Astronomy – H.E.S.S. RS Ophiuchi news</span>
+      <span class="src-link"><a href="https://www.multimessenger-astronomy.com/news/the-first-galactic-tev-transient-the-nova-explosion-rs-ophiuchi-observed-by-hess">https://www.multimessenger-astronomy.com/news/the-first-galactic-tev-transient-the-nova-explosion-rs-ophiuchi-observed-by-hess</a></span>
+    </li>
+    <li id="ref-13">
+      <span class="num">[13]</span><span class="src-title">De Sarkar et al., "Lepto-hadronic interpretation of 2021 RS Ophiuchi nova outburst," arXiv:2305.10735</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/2305.10735v1">http://arxiv.org/abs/2305.10735v1</a></span>
+    </li>
+    <li id="ref-14">
+      <span class="num">[14]</span><span class="src-title">"Interpretation of the light curve of gamma-ray emission from the 2021 outburst of RS Ophiuchi," Phys. Rev. D 106, 103011</span>
+      <span class="src-link"><a href="https://link.aps.org/doi/10.1103/PhysRevD.106.103011">https://link.aps.org/doi/10.1103/PhysRevD.106.103011</a></span>
+    </li>
+    <li id="ref-15">
+      <span class="num">[15]</span><span class="src-title">BAA – "Preparing for the next eruption of T CrB"</span>
+      <span class="src-link"><a href="https://britastro.org/forums/topic/preparing-for-the-eruption-of-t-crb">https://britastro.org/forums/topic/preparing-for-the-eruption-of-t-crb</a></span>
+    </li>
+    <li id="ref-16">
+      <span class="num">[16]</span><span class="src-title">Wikipedia – "T Coronae Borealis"</span>
+      <span class="src-link"><a href="https://en.wikipedia.org/wiki/T_Coronae_Borealis">https://en.wikipedia.org/wiki/T_Coronae_Borealis</a></span>
+    </li>
+    <li id="ref-17">
+      <span class="num">[17]</span><span class="src-title">Schneider, "When will the Next T CrB Eruption Occur?"</span>
+      <span class="src-link"><a href="https://iopscience.iop.org/article/10.3847/2515-5172/ad8bba/ampdf">https://iopscience.iop.org/article/10.3847/2515-5172/ad8bba/ampdf</a></span>
+    </li>
+    <li id="ref-18">
+      <span class="num">[18]</span><span class="src-title">AAVSO – "When will the recurrent nova T CrB erupt?"</span>
+      <span class="src-link"><a href="https://aavso.org/blog/tcrb-blazed-and-confused">https://aavso.org/blog/tcrb-blazed-and-confused</a></span>
+    </li>
+    <li id="ref-19">
+      <span class="num">[19]</span><span class="src-title">Pei et al., MNRAS (2026), "When will T Coronae Borealis next erupt as a nova?"</span>
+      <span class="src-link"><a href="https://academic.oup.com/mnras/article/550/4/stag1361/8739796">https://academic.oup.com/mnras/article/550/4/stag1361/8739796</a></span>
+    </li>
+    <li id="ref-20">
+      <span class="num">[20]</span><span class="src-title">Luna et al., A&amp;A (2026), HST/Swift/NuSTAR/XMM observations of T CrB</span>
+      <span class="src-link"><a href="https://www.aanda.org/articles/aa/full_html/2026/03/aa57435-25/aa57435-25.html">https://www.aanda.org/articles/aa/full_html/2026/03/aa57435-25/aa57435-25.html</a></span>
+    </li>
+    <li id="ref-21">
+      <span class="num">[21]</span><span class="src-title">Roy et al., "Radio studies of novae: a current status report," arXiv:1302.4455</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1302.4455v1">http://arxiv.org/abs/1302.4455v1</a></span>
+    </li>
+    <li id="ref-22">
+      <span class="num">[22]</span><span class="src-title">Weston et al., "Shock-powered radio emission from V5589 Sagittarii," arXiv:1510.06751</span>
+      <span class="src-link"><a href="http://arxiv.org/abs/1510.06751v3">http://arxiv.org/abs/1510.06751v3</a></span>
+    </li>
+  </ol>
+
+</main>
+
+<footer>
+  Research Report · Radio Observations of Recurrent Novae
+</footer>
+
+</body>
+</html>
